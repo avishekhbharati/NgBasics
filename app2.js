@@ -56,5 +56,24 @@ app2.controller('partialViews', function($scope){
 
 app2.controller('eventController', function($scope){
 	$scope.blur = 0;
+	$scope.click = 0;
+	$scope.dblclick = 0;
+	$scope.copy = 0;
+	$scope.paste = 0;
+	$scope.mouseenter = 0;
+
+	$scope.keyDown = function(e){
+		$scope.kdKey = String.fromCharCode(e.keyCode);
+	}
+
+
+	//.........
+	$scope.disableButton = true;
+
+	//.............
+	$scope.dayTimeButton = true;
 
 });
+
+
+

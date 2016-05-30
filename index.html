@@ -75,14 +75,37 @@
 
 	<ng-include src="getList()"></ng-include>
 </div>
-
+<hr>
 <div ng-controller= "eventController">
-	<input type="text" ng-blur="blur = blur + 1"  />
+	<input type="text" ng-blur="blur = blur + 1"
+		ng-click = "click = click + 1"
+		ng-dblclick = "dblclick = dblclick + 1"
+		ng-copy = "copy = copy+1"
+		ng-paste = "paste = paste + 1"
+		ng-mouseenter = "mouseenter =mouseenter + 1"
+		ng-keydown = "keyDown($event)"
+
+	  />
+
 	<h4>Blur events: {{blur}}</h4>
+	<h4>Click events: {{click}}</h4>
+	<h4>DblClick events: {{dblclick}}</h4>
+	<h4>Copy events: {{copy}}</h4>
+	<h4>Paste events: {{paste}}</h4>
+	<h4>mouseenter events: {{mouseenter}}</h4>
+	<h4>keydown events: {{kdKey}}</h4>
 
-</div>
+<h3>Button EnabledOrDisabled.</h3>
+<p>
+	<button ng-disabled="disableButton"> Button </button>
+<input type="checkbox" ng-model= "disableButton"> DisableButton 
+</p>
 
+<br>
+<input type="checkbox" ng-model = "dayTimeButton">Morning !
 
+<p ng-hide = "dayTimeButton">Good Evening</p>
+<p ng-hide = "!dayTimeButton">Good Morning</p>
 
 
 
