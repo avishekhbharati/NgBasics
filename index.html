@@ -1,0 +1,86 @@
+
+<!-- anular app initialization. Can also initialize some variables upfront. -->
+<html ng-app="app2" ng-init="person= {fname: 'sabin', lName: 'Tmkr'}; capitols = [{country:'Nepal', capital:'kathmandu'},{country:'Bhutan', capital:'Thimpu'}]" ng-cloak>
+<head>
+	<title></title>
+
+	<!-- Removes the flashing curly brackets on page reload. Else needs ro keep the angualr references on the top. -->
+<style type="text/css"> 
+ 	[ng\:cloak],[ng-cloak], .ng-cloak{ display : none;}
+</style>
+
+</head>
+<body>
+<!-- demonstartes usage of the multiple controllers within a single page or in a single app. -->
+
+
+<!-- first controller as defines in app2.js -->
+<div ng-controller= "ctrl1">
+	{{first}}<br>	
+	{{second}}<br>
+	{{sum()}}<br>
+	{{updateValue()}}
+
+	<br>
+	<input type"text" ng-model= "first">
+</div>
+
+<br>
+
+	<!-- controller ctrl2 -->
+<div ng-controller="ctrl2">
+ bad Feeling :: {{badFeeling}}<br>
+	<input type="text" ng-model= "name" >
+	{{name}}
+
+	<ul>
+		<li ng-repeat= "flng in goodFeeling | limitTo: 2:2"> 
+			{{flng}} 
+		</li>
+	</ul>
+
+	<hr>
+	<ul>
+		<li ng-repeat= "flng in badFeeling "> {{flng }} </li>
+	</ul>
+
+	<hr>
+
+	<ul>
+		<li ng-repeat = "capitol in capitols">{{'country: '+ capitol.country + ', capital: '+capitol.capital + ', index: ' + $index}}</li>
+	</ul> 
+	<hr>
+</div>
+
+
+<!-- Third controller -->
+<div ng-controller = "ctrl3">
+	{{badFel}}
+	<br>
+</dv>
+<hr>
+
+
+<!-- controller : gListCtrl -->
+<div ng-controller= "gListCtrl">
+	<h3>New Controller : Groceries List</h3>
+	 Length of groceries : {{groceries.length}}
+	<ul>
+		<li>{{groceries[0].item}}  </li>
+		<li ng-repeat="grocery in groceries" ng-if="$index > 0"> {{grocery.item}} {{$index}}</li>
+	</ul>
+	<hr>
+	<h3>Check Partial Views here.</h3>
+	<input type="checkbox" ng-model= "showList"><br>
+
+	<ng-include src="getList()"></ng-include>
+</div>
+
+
+
+
+
+<script src="angular.min.js"></script>
+<script src="app2.js"></script>
+</body>
+</html>
