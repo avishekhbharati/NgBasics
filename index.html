@@ -76,6 +76,12 @@
 	<ng-include src="getList()"></ng-include>
 </div>
 
+<div ng-controller= "eventController">
+	<input type="text" ng-blur="blur = blur + 1"  />
+	<h4>Blur events: {{blur}}</h4>
+
+</div>
+
 
 
 

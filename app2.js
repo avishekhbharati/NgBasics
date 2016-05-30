@@ -53,3 +53,8 @@ app2.controller('partialViews', function($scope){
 	}	
 
 });
+
+app2.controller('eventController', function($scope){
+	$scope.blur = 0;
+
+});
