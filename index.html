@@ -7,6 +7,15 @@
 	<!-- Removes the flashing curly brackets on page reload. Else needs ro keep the angualr references on the top. -->
 <style type="text/css"> 
  	[ng\:cloak],[ng-cloak], .ng-cloak{ display : none;}
+
+ 	.blueText{
+ 		color: blue;
+ 	}
+
+ 	.redText{
+ 		color: red;
+ 	}
+
 </style>
 
 </head>
@@ -95,18 +104,29 @@
 	<h4>mouseenter events: {{mouseenter}}</h4>
 	<h4>keydown events: {{kdKey}}</h4>
 
-<h3>Button EnabledOrDisabled.</h3>
-<p>
-	<button ng-disabled="disableButton"> Button </button>
-<input type="checkbox" ng-model= "disableButton"> DisableButton 
-</p>
+	<h3>Button EnabledOrDisabled.</h3>
+	<p>
+		<button ng-disabled="disableButton"> Button </button>
+	<input type="checkbox" ng-model= "disableButton"> DisableButton 
+	</p>
 
-<br>
-<input type="checkbox" ng-model = "dayTimeButton">Morning !
+	<br>
+	<input type="checkbox" ng-model = "dayTimeButton">Morning !
 
-<p ng-hide = "dayTimeButton">Good Evening</p>
-<p ng-hide = "!dayTimeButton">Good Morning</p>
+	<p ng-hide = "dayTimeButton">Good Evening</p>
+	<p ng-hide = "!dayTimeButton">Good Morning</p>
+	<br>
 
+	<h4>Changing classes dynamically</h4>
+
+	<select ng-model = 'textStyling'>
+		<option value="blueText">blue</option>
+		<option value="redText">red</option>
+	</select>
+
+	<p ng-class = "textStyling">Change the color.</p>
+
+</div>
 
 
 <script src="angular.min.js"></script>
